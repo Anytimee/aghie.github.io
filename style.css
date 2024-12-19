@@ -1,0 +1,305 @@
+:root {
+    --color-1: skyblue;
+    --text-color: white;
+    --accent-color: blue; 
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 12pt;
+    font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+    background-color: black;
+    height: 100vh;
+}
+
+.navbar {
+    top: 0;
+    position: sticky;
+    border-radius: 1%;
+    z-index: 100;
+    height: 80px;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;   
+}
+
+.navbar a{
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.navbar a:hover {
+    background-color:black ;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.navbar .home-link{
+    justify-content: space-between;
+}
+
+.navbar svg {
+    fill: var(--text-color);
+}
+#sidebar-active{
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button{
+    display: none;
+}
+@media(max-width: 768px) {
+    .navbar {
+        top: 0;
+        position: sticky;
+        border-radius: 1%;
+        z-index: 100;
+        -webkit-border-radius: 1%;
+        -moz-border-radius: 1%;
+        -ms-border-radius: 1%;
+        -o-border-radius: 1%;
+}
+    .links-container{
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 340px;
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.85s ease-out;
+        -webkit-transition: 0.85s ease-out;
+        -moz-transition: 0.85s ease-out;
+        -ms-transition: 0.85s ease-out;
+        -o-transition: 0.85s ease-out;
+    }
+    .navbar a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+    .open-sidebar-button, .close-sidebar-button{
+        padding: 20px;
+        display: block;
+    }
+    
+    #sidebar-active:checked ~ .links-container{
+        right: 0;
+    }
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+@media(min-width: 767px) {
+    svg {
+        display: none;
+    }
+}
+
+.container {
+    display: grid;
+}
+
+.header {
+    display: grid;
+    grid-template-areas: 
+    'hero hero feature-1'
+    'hero hero feature-2';
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 300px;
+    background-image: url(image/10.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 80px;
+}
+
+.hero > * {
+    display: none;
+}
+
+.features{
+    background-color: black;
+    color: white;
+    display: grid;
+    /* justify-content: center;
+    align-content: center; */
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 200px;
+    grid-template-columns: repeat(auto-fit, 1px);
+}
+
+.feature-1 {
+    grid-area: feature-1;
+    background-image: url(image/©Credit\ Seputar\ Gcam20241027_221111_🍃\ Iphone\ 16\ Pro\ Vivid\ V3\ 🍃\ Format\ YUV\ \(\ Video\ Stabil\ \).jpg);
+    background-size: cover;
+}
+
+.feature-2 {
+    grid-area: feature-2;
+    background-image: url(image/IMG-20241205-WA0042.jpg);
+    background-size: cover;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr   ;
+    align-items: center;
+}
+
+/* .menu .brand {
+    font-size: 1.3em;
+    color:palevioletred;
+} */
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5px;
+}
+
+.menu a {
+    display: block;
+    background-color: skyblue;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.menu a:hover {
+    color: black;
+}
+/* Resposive breakpoints */
+
+@media (max-width: 1024px){
+    .menu {
+        grid-template-columns: 1fr;
+    }
+    .menu .brand {
+        display: none;
+    }
+    .features {
+        padding: 200px;
+    }
+}
+
+@media (max-width: 890px) {
+    .features {
+        padding: 200px;
+    }
+}
+@media (max-width: 600px) {
+    .header {
+        grid-template-areas: 
+        'hero'
+        'feature-1'
+        'feature-2';
+    }
+    .features {
+        padding: 100px;
+        
+    }
+
+    .features{
+        background-color: black;
+        color: white;
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, 1px);
+    }
+}
+
+.grid-gallery {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px ;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400, 1fr));
+    grid-auto-rows: 400px ;
+    grid-auto-flow: dense;
+    grid-gap: 20px;
+}
+
+.grid-gallery .grid-item{
+    position: relative;
+    background-color: white  ;
+    overflow: hidden;
+}
+
+.grid-gallery .grid-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -moz-transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -ms-transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -o-transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.grid-gallery .grid-item a{
+    cursor: zoom-in;
+}
+
+.grid-gallery .grid-item:nth-child(3n - 2) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+    .grid-gallery {
+
+        grid-template-columns: repeat(auto-fit, minmax(400, 1fr));
+        grid-auto-rows: 400px ;
+    }
+
+    .grid-gallery .grid-item:nth-child(3n - 2) {
+        grid-column: unset;
+        grid-row: unset;
+    }
+}
