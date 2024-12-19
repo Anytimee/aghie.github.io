@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"">
     <title>Gallery Documentation</title>
+    <script>
+        // Fungsi untuk menonaktifkan klik kanan
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // Mencegah menu klik kanan muncul
+            alert('Jangan klik kanan ya.'); // Pesan opsional
+        });
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
