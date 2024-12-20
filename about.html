@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Documentation</title>
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap"
       rel="stylesheet"
     />
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <input type="checkbox" id="sidebar-active">
-        <label for="sidebar-active" class="open-sidebar-button">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      <input type="checkbox" id="sidebar-active" />
+      <label for="sidebar-active" class="open-sidebar-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="#e8eaed"
+        >
+          <path
+            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+          />
+        </svg>
+      </label>
+      <label id="overlay" for="sidebar-active"></label>
+      <div class="links-container" class="close-sidebar-button">
+        <label for="sidebar-active">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#e8eaed"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
         </label>
-        <label id="overlay" for="sidebar-active"></label>
-        <div class="links-container" class="close-sidebar-button">
-            <label for="sidebar-active">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-            </label>
 
-            <a class="home-link" href="index.html">Home</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="#">About</a>
-            <a href="sosmed.html">Sosmed</a>
-        </div>
+        <a class="home-link" href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#">About</a>
+        <a href="sosmed.html">Sosmed</a>
+      </div>
     </nav>
 
     <div class="about">
-        <h1>About</h1>
-        <p>This website was made with love for my girlfriend.</p>
-        <p>If you like this website, DM my instagram.</p>
-       <a" href="sosmed.html"><button class="sosmed-btn" >click here</button></a>
-        <p class="tp">Created by: Aghie Faezya Putra </p>
+      <h1>About</h1>
+      <p>This website was made with love for my girlfriend.</p>
+      <p>If you like this website, DM my instagram.</p>
+      <a href="sosmed.html"><button class="sosmed-btn">click here</button></a>
+      <p class="tp">Created by Aghie Faezya Putra</p>
     </div>
-
-
-</body>
+  </body>
 </html>
