@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       document.addEventListener("contextmenu", function (event) {
         event.preventDefault();
-        alert("Jangan klik kanan ya.");
       });
     </script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -18,11 +18,493 @@
       href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
-  <body>
+  <style>
+
+body {
+  background: black;
+}
+
+.scene {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.upper {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.moon {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: deeppink;
+  position: absolute;
+  bottom: -150px;
+  left: 50px;
+  border: 5px solid #333;
+  box-sizing: border-box;
+  box-shadow: inset 0 -160px mediumvioletred;
+  opacity: 0.9;
+}
+
+.crater1 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50% ;
+  position: absolute;
+  top: 20px;
+  right: 150px;
+  background-color: mediumvioletred;
+  opacity: 0.2;
+  border: 1px solid #333;
+}
+
+.crater2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50% ;
+  position: absolute;
+  top: 70px;
+  right: 180px;
+  background-color: mediumvioletred;
+  opacity: 0.2;
+  border: 1px solid #333;
+}
+
+.cloud1 {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 100px;
+  right: -50px;
+  animation: float2 4s ease-in-out infinite alternate;
+}
+
+.cloud2 {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: float1 4s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+  from {transform: translateX(-50px);}
+  to {transform: translateX(50px);}
+}
+
+@keyframes float2 {
+  from {transform: translateX(50px);}
+  to {transform: translateX(-50px);}
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 60px;
+  border-radius: 50%;
+  background-color: fuchsia;
+}
+
+.circle::before {
+  content: "";
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 30px;
+  left: -40px;
+  border-radius: 50%;
+  background-color: fuchsia;
+}
+
+.circle::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  border-radius: 50%;
+  background-color: fuchsia;
+}
+
+.filler {
+  width: 145px;
+  height: 40px;
+  border-radius: 17px;
+  position: absolute;
+  top: 70px;
+  left: 28px;
+  background-color: fuchsia;
+  box-shadow: inset 0 -5px purple;
+}
+
+.star1 {
+  width: 20px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: purple;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  animation: twinkle 0.5s 0.2s linear infinite alternate;
+}
+
+.star1::after {
+  content: "";
+  width: 5px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: purple;
+  position: absolute;
+  top: -7px;
+  right: 8px;
+  animation: twinkle 0.5s  0.2s linear infinite alternate;
+}
+
+.star2 {
+  width: 20px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: purple;
+  position: absolute;
+  top: -20px;
+  right: 200px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.star2::after {
+  content: "";
+  width: 5px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: purple;
+  position: absolute;
+  top: -7px;
+  right: 8px;
+  animation: twinkle 0.5s 0.3s linear infinite alternate;
+}
+
+.star3 {
+  width: 20px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: purple;
+  position: absolute;
+  top: 130px;
+  left: -20px;
+  animation: twinkle 0.5s linear infinite alternate;
+}
+
+.star3::after {
+  content: "";
+  width: 5px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: purple;
+  position: absolute;
+  top: -7px;
+  left: 8px;
+  animation: twinkle 0.5s linear infinite alternate;
+}
+
+@keyframes twinkle {
+  to {background-color: deeppink;}
+}
+
+.tail {
+  width: 150px;
+  height: 120px;
+  position: absolute;
+  bottom: -10px;
+  left: 2px;
+}
+
+.left {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: darkslateblue;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  border: 1px solid #333;
+  z-index: 1;
+}
+
+.left::before {
+  content: "";
+  width: 60px;
+  height: 20px;
+  border-bottom: 60px solid darkslateblue;
+  border-radius: 0 0 0 100%;
+  position: absolute;
+  top: -20px;
+  left: -30px;
+  animation: excite1 2s infinite alternate linear;
+  transform-origin: right;
+}
+
+@keyframes excite1 {
+  to {transform: rotateZ(-5deg);}
+}
+
+.right {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: darkslateblue;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  border: 1px solid #333;
+  z-index: 1;
+}
+
+.right::after {
+  content: "";
+  width: 60px;
+  height: 20px;
+  border-bottom: 60px solid darkslateblue;
+  border-radius: 0 0 100% 0;
+  position: absolute;
+  top: -20px;
+  right: -30px;
+  animation: excite2 2s linear alternate infinite;
+  transform-origin: left;
+}
+
+@keyframes excite2 {
+  to {transform: rotateZ(5deg);}
+}
+
+
+.body {
+  height: 80px;
+  width: 58px;
+  border-radius: 25px;
+  position: absolute;
+  bottom: -18px;
+  left: 54px;
+  background-color: darkslateblue;
+  transform: rotateZ(-10deg);
+  border: 2px solid #333;
+}
+
+.drop {
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background-color: purple;
+  position: absolute;
+  bottom: -25px;
+  right: 180px;
+  animation: spray 3s ease-out infinite;
+}
+
+.drop::before {
+  content: "";
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: purple;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation: spray 3s 0.3s ease-out infinite;
+}
+
+.drop::after {
+  content: "";
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: purple;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation: spray 3s 0.7s ease-out infinite;
+}
+
+@keyframes spray {
+  0% {transform: translateY(0);}
+  30% {transform: translateY(-100px);}
+  60% {transform: translateY(0);}
+}
+
+
+.lower {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: 5px solid #333;
+  overflow: hidden;
+}
+
+.whale {
+  width: 400px;
+  height: 400px;
+  border-radius: 300px;
+  position: absolute;
+  top: -250px;
+  left: 50px;
+  background-color: slateblue;
+  box-shadow: inset 0 -10px darkslateblue;
+  border: 5px solid #333;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.eye {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 110px;
+  right: 120px;
+  background-color: #333;
+  animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+  0% {transform: scaleY(0.1);}
+  5% {transform: scaleY(0.1);}
+  5.1% {transform: scaleY(1);}
+}
+
+.detail1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  background-color: lightsteelblue;
+  overflow: hidden;
+  border: 2px solid #333;
+  box-sizing: border-box;
+}
+
+.fin {
+  width: 50px;
+  height: 120px;
+  border-radius: 40px;
+  position: absolute;
+  bottom: 0;
+  right: 180px;
+  background-color: slateblue;
+  border: 5px solid #333;
+  border-top: 5px solid transparent;
+  transform: rotateZ(15deg);
+  box-shadow: inset 0 -10px darkslateblue;
+  animation: swim 2s linear infinite alternate;
+  transform-origin: top;
+}
+
+@keyframes swim {
+  to {transform: rotateZ(20deg);}
+}
+
+.detail2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+  border-bottom: 8px solid #333;
+  border-right: 8px solid #333;
+  transform: rotateZ(-50deg);
+}
+
+.detail2::before {
+  content: "";
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  border-bottom: 8px solid #333;
+  border-right: 8px solid #333;
+}
+
+.detail2::after {
+  content: "";
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  border-bottom: 8px solid #333;
+  border-right: 8px solid #333;
+}
+
+  </style>
+  <body class="min-h-screen flex flex-col">
+    <audio autoplay loop>
+      <source src="/audio/Ed_Sheeran_-_Photograph_(Official_Lyric_Video).mp3" type="audio/mp3">
+      <source src="lagu.ogg" type="audio/ogg">
+      Browser Anda tidak mendukung elemen audio.
+    </audio>
+  <div class="scene">
+    <div class="upper">
+      <div class="moon">
+        <div class="crater1"></div>
+        <div class="crater2"></div>
+      </div>
+      <div class="star1"></div>
+      <div class="star2"></div>
+      <div class="star3"></div>
+      <div class="cloud1">
+        <div class="circle"></div>
+        <div class="filler"></div>
+      </div>
+      <div class="cloud2">
+        <div class="circle"></div>
+        <div class="filler"></div>
+      </div>
+      <div class="tail">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="body"></div>
+      </div>
+
+      <div class="drop"></div>
+
+    </div>
+    <div class="lower">
+      <div class="whale">
+        <div class="eye"></div>
+        <div class="detail1">
+          <div class="detail2"></div>
+        </div>
+
+      </div>
+      <div class="fin"></div>
+    </div>
+  </div>
+  <h1 id="home" class="z-50 uppercase text-white flex justify-center items-center h-screen text-6xl sm:text-center">Selamat datang di website dokumentasi saya.</h1>
     <nav class="navbar">
       <input type="checkbox" id="sidebar-active" />
-      <label for="sidebar-active" class="open-sidebar-button">
+      <!-- <label for="sidebar-active" class="open-sidebar-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24px"
@@ -49,36 +531,106 @@
               d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
             />
           </svg>
-        </label>
+        </label> -->
 
-        <a class="home-link" href="#">Home</a>
+        <!-- <a class="home-link" href="#">Home</a>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
-        <a href="sosmed.html">Sosmed</a>
+        <a href="sosmed.html">Sosmed</a> -->
       </div>
     </nav>
 
-    <div class="container">
-      <header class="header">
-        <div class="hero"></div>
-        <div class="features feature-1">
-          <h4 class="name">Aghie</h4>
-        </div>
-        <div class="features feature-2">
-          <h4 class="name">Valen</h4>
-        </div>
-      </header>
+    <div id="banner" class="h-screen mt-20">
+      <div class="relative w-full h-96 md:h-96 lg:h-[500px]" data-aos="fade-up" data-aos-duration="3000">
+        <video
+          autoplay
+          muted
+          loop
+          class="w-full h-full object-cover absolute top-0 left-0"
+        >
+          <source
+            src="/video/the-wind-rises-die-with-a-smile-amv-1080-ytshorts.savetube.me.mp4"
+            type="video/webm"
+          />
+          Browser Anda tidak mendukung video WebM.
+        </video>
+      </div>
+    </div>  
 
-      <nav class="menu">
+    <div id="about" class="h-screen flex flex-col justify-center items-center uppercase text-4xl mb-96">
+      <h1 class="text-white text-center font-[30px]" data-aos="zoom-in" data-aos-duration="2000">About</h1>
+      <p class="text-white text-center mt-4" data-aos="fade-right" data-aos-duration="2000">Sesuai namanya, website ini adalah dokumentasi untuk saya pribadi.</p>
+    </div>
+
+    <div id="gallery" class="mt-96 h-screen flex justify-center items-center ">
+      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+        <div>
+          <img src="image/1.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 1" data-aos="fade-right" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/2.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 2" data-aos="fade-up" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/3.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 3" data-aos="fade-up-left" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/4.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 4" data-aos="fade-down-right" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/5.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 5" data-aos="fade-right" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/6.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 6" data-aos="fade-down" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/7.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 6" data-aos="fade-up" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/8.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 6" data-aos="fade-down-left" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/9.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 6" data-aos="fade-right" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/10.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 6" data-aos="fade-left" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/11.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 6" data-aos="fade-up" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/12.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 6" data-aos="fade-down" data-aos-duration="2000">
+        </div>
+        <div>
+          <img src="/image/13.jpg" class="w-full h-auto object-cover rounded-lg" alt="Gambar 6" data-aos="fade-right" data-aos-duration="2000">
+        </div>
+        <!-- Tambahkan lebih banyak gambar sesuai kebutuhan -->
+      </div>
+    </div>
+
+    <div id="sosmed" class="mt-96 h-screen flex flex-col justify-center items-center uppercase text-4xl">
+      <h1 class="text-white text-center font-[30px]" data-aos="zoom-in" data-aos-duration="2000">Sosmed</h1>
+        <a href="https://www.instagram.com/aghiefaezyp/" data-aos="flip-up" data-aos-duration="2000"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                    <path fill="#f55376" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20 c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20 C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fac8d5" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5 s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fac8d5"></circle><path fill="#fac8d5" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12 C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18 z"></path>
+                  </svg>
+        </a>
+    </div>
+
+    <footer
+        class="menu z-50 fixed bottom-0 left-0 w-full bg-gray-800 text-white text-center py-4 bg-black bg-opacity-10"
+      >
         <!-- <div class="brand">
                 <h4>Y'all</h4>
             </div> -->
-        <ul class="menu-list">
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="sosmed.html">Sosmed</a></li>
+        <ul class="z-50 menu-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#sosmed">Sosmed</a></li>
         </ul>
-      </nav>
-    </div>
+      </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

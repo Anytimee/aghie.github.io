@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap"
       rel="stylesheet"
@@ -15,7 +16,7 @@
   </head>
   <body>
     <nav class="navbar">
-      <input type="checkbox" id="sidebar-active" />
+      <!-- <input type="checkbox" id="sidebar-active" />
       <label for="sidebar-active" class="open-sidebar-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -49,15 +50,38 @@
         <a href="gallery.html">Gallery</a>
         <a href="#">About</a>
         <a href="sosmed.html">Sosmed</a>
-      </div>
+      </div> -->
     </nav>
 
-    <div class="about">
+    <div
+      class="text-white flex flex-col items-center justify-center space-y-4 h-screen"
+    >
       <h1>About</h1>
-      <p>This website was made with love for my girlfriend.</p>
-      <p>If you like this website, DM my instagram.</p>
-      <a href="sosmed.html"><button class="sosmed-btn">click here</button></a>
-      <p class="tp">Created by Aghie Faezya Putra</p>
+      <p>Ini adalah website dokumentasi saya.</p>
+      <p>Ikuti kami di instagram.</p>
+      <a href="sosmed.html">
+        <button
+          class="border bg-white text-black hover:bg-black hover:text-white py-2 rounded"
+        >
+          click here
+        </button>
+      </a>
     </div>
+    <footer
+      class="menu fixed bottom-0 left-0 w-full bg-gray-800 text-white text-center py-4 bg-black bg-opacity-10"
+    >
+      <!-- <div class="brand">
+                <h4>Y'all</h4>
+            </div> -->
+      <ul class="z-50 menu-list">
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sosmed.html">Sosmed</a></li>
+      </ul>
+    </footer>
+
+    <footer class="fixed left-0 w-full">
+      <p class="tp text-white text-center">Created by Aghie Faezya Putra</p>
+    </footer>
   </body>
 </html>
