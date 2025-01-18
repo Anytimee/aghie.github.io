@@ -622,19 +622,14 @@ body, html {
         </a>
     </div>
 
-    <footer
-        class="menu z-50 fixed bottom-0 left-0 w-full bg-gray-800 text-white text-center py-4 bg-black bg-opacity-10"
-      >
-        <!-- <div class="brand">
-                <h4>Y'all</h4>
-            </div> -->
-        <ul class="z-50 menu-list overflow-x-hidden">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#sosmed">Sosmed</a></li>
-        </ul>
-      </footer>
+    <footer class="menu z-50 fixed bottom-0 left-0 w-full bg-gray-800 text-white text-center py-4 bg-black bg-opacity-10">
+      <ul class="menu-list flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 overflow-x-hidden">
+        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-500">About</a></li>
+        <li><a href="#gallery" class="hover:text-blue-500">Gallery</a></li>
+        <li><a href="#sosmed" class="hover:text-blue-500">Sosmed</a></li>
+      </ul>
+    </footer>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
